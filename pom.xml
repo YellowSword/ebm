@@ -43,13 +43,15 @@
     </build>
     <dependencies>
         
-        <dependency>
+     
+         <dependency>
             <groupId>ebm</groupId>
-            <artifactId>beetl</artifactId>
-            <version>1.26.01</version>
-            <systemPath>${basedir}/lib/beetl.1.26.01.jar</systemPath>
+            <artifactId>beetl2</artifactId>
+            <version>2.0</version>
+            <systemPath>${basedir}/lib/beetl.2.0.jar</systemPath>
             <scope>system</scope>
         </dependency>
+        
         <dependency>
             <groupId>ebm</groupId>
             <artifactId>bsl</artifactId>

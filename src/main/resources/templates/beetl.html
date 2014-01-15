@@ -45,8 +45,8 @@
     </thead>
     <tbody>
     <!--: for(item in items){ -->
-    <tr class="${decode(item_index%2,0,'odd','even')}">
-        <td>${item_index}</td>
+    <tr class="${itemLP.even?'odd':'even'}">
+        <td>${itemLP.index}</td>
         <td>${item.id}</td>
         <td>${item.code}</td>
         <td style="text-align: left;">${item.name}</td>

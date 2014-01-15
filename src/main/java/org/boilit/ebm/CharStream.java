@@ -23,6 +23,7 @@ public final class CharStream extends Writer implements IOutput {
 
     @Override
     public void flush() throws IOException {
+    	int a = 0;
     }
 
     @Override

@@ -3,7 +3,7 @@
 @set Libraries=%CD%/lib
 
 @rem Please give JAVA_HOME location to run benchmark
-@rem @set JAVA_HOME=D:\Java\jdk7u40x64
+@set JAVA_HOME=C:\Program Files\Java\jdk1.6.0_30
 
 @set PATH=.;%JAVA_HOME%\bin;
 @set CLASSPATH=%CD%;
