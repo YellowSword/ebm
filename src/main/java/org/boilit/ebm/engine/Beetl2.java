@@ -29,7 +29,7 @@ public final class Beetl2 extends AbstractEngine {
     	String home = Beetl2.class.getResource("/templates").getPath();
 		Configuration cf = Configuration.defaultConfiguration();
 		
-		cf.setDirectByteOutput(super.isSupportByteStream());
+		cf.setDirectByteOutput(false);
 		cf.setStatementStart("<!--:");
 		cf.setStatementEnd("-->");
 		FileResourceLoader rs = new FileResourceLoader(home, cf.getCharset());

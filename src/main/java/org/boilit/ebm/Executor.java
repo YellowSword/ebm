@@ -96,7 +96,11 @@ public final class Executor implements Runnable {
             engine.work(model, outputStream);
             outputStream.flush();
         }
-        return System.currentTimeMillis() - t1;
+        long time =  System.currentTimeMillis() - t1;
+        FileOutputStream fos = new FileOutputStream(new File(engineName+".html"));
+        engine.work(model, fos);
+        fos.flush();
+        return time ;
     }
 
     private long doWork(final IEngine engine, final Map<String, Object> model, final Writer writer, final int count, final int warm) throws Exception {
@@ -110,7 +114,11 @@ public final class Executor implements Runnable {
             engine.work(model, writer);
             writer.flush();
         }
-        return System.currentTimeMillis() - t1;
+        long time =  System.currentTimeMillis() - t1;
+        FileWriter fos = new FileWriter(new File(engineName+".html"));
+        engine.work(model, fos);
+        fos.flush();
+        return time;
     }
 
     public static final void main(final String[] args) throws Exception {
