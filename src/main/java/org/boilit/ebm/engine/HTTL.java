@@ -1,13 +1,13 @@
 package org.boilit.ebm.engine;
 
 import httl.Engine;
-import org.boilit.ebm.AbstractEngine;
-import org.boilit.ebm.IEngine;
 
 import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Map;
 import java.util.Properties;
+
+import org.boilit.ebm.AbstractEngine;
 
 /**
  * @author Boilit
@@ -18,8 +18,8 @@ public final class HTTL extends AbstractEngine {
     private Engine engine;
 
     @Override
-    public final void init(Properties properties) throws Exception {
-        templateUrl = "/templates/httl.html";
+    public final void init(String engineName,Properties properties) throws Exception {
+    	      templateUrl = "/templates/httl.html";
 
         Properties prop = new Properties();
         prop.setProperty("import.packages", "java.util");

@@ -1,13 +1,13 @@
 package org.boilit.ebm.engine;
 
-import org.boilit.bsl.Engine;
-import org.boilit.bsl.xio.FileResourceLoader;
-import org.boilit.ebm.AbstractEngine;
-
 import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Map;
 import java.util.Properties;
+
+import org.boilit.bsl.Engine;
+import org.boilit.bsl.xio.FileResourceLoader;
+import org.boilit.ebm.AbstractEngine;
 
 /**
  * @author Boilit
@@ -18,8 +18,8 @@ public final class BSL extends AbstractEngine {
     private Engine engine;
 
     @Override
-    public final void init(Properties properties) throws Exception {
-        templateUrl = BSL.class.getResource("/templates/bsl.html").getPath();
+    public final void init(String engineName,Properties properties) throws Exception {
+    	      templateUrl = BSL.class.getResource("/templates/bsl.html").getPath();
 
         engine = Engine.getEngine();
         engine.setInputEncoding(properties.getProperty("inputEncoding", "UTF-8"));

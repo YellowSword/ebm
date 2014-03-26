@@ -4,8 +4,10 @@ import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Map;
 import java.util.Properties;
+
 import jetbrick.template.JetConfig;
 import jetbrick.template.JetEngine;
+
 import org.boilit.ebm.AbstractEngine;
 
 /**
@@ -17,8 +19,8 @@ public final class JetbrickTemplate extends AbstractEngine {
     private JetEngine engine;
 
     @Override
-    public final void init(Properties properties) throws Exception {
-        templateUrl = "/templates/jetx.html";
+    public final void init(String engineName,Properties properties) throws Exception {
+    	      templateUrl = "/templates/jetx.html";
 
         Properties prop = new Properties();
         prop.setProperty(JetConfig.COMPILE_DEBUG, "false");

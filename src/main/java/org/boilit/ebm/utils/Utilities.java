@@ -1,6 +1,9 @@
 package org.boilit.ebm.utils;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -27,7 +30,8 @@ public final class Utilities {
     }
 
     public static Class loadClass(String className) throws ClassNotFoundException {
-        return getDefaultClassLoader().loadClass(className);
+        //return getDefaultClassLoader().loadClass(className);
+        return Class.forName(className);
     }
 
     public static final Properties getProperties(final String file) throws Exception {

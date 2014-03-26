@@ -1,12 +1,11 @@
 // Copyright (c) 2013, Webit Team. All Rights Reserved.
 package org.boilit.ebm.engine;
 
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+
 import org.boilit.ebm.AbstractEngine;
 import org.boilit.ebm.StockModel;
 
@@ -19,8 +18,8 @@ public class DirectOut extends AbstractEngine {
     String encoding;
 
     @Override
-    public final void init(Properties properties) throws Exception {
-        encoding = properties.getProperty("outputEncoding", "UTF-8");
+    public final void init(String engineName,Properties properties) throws Exception {
+    	      encoding = properties.getProperty("outputEncoding", "UTF-8");
     }
 
     @Override

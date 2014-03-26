@@ -1,12 +1,13 @@
 package org.boilit.ebm.engine;
 
-import org.boilit.ebm.AbstractEngine;
-
 import java.io.OutputStream;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+
+import org.boilit.ebm.AbstractEngine;
+
 import webit.script.CFG;
 
 /**
@@ -19,7 +20,7 @@ public class WebitScript extends AbstractEngine {
     private webit.script.Engine engine;
 
     @Override
-    public final void init(Properties properties) throws Exception {
+    public final void init(String engineName,Properties properties) throws Exception {
         templateUrl = "/templates/webit.html";
 
         Map<String, Object> parameters = new HashMap<String, Object>();
@@ -31,7 +32,7 @@ public class WebitScript extends AbstractEngine {
     protected void initConfig(Map<String, Object> parameters, Properties properties) {
 
         parameters.put(CFG.OUT_ENCODING, properties.getProperty("outputEncoding", "UTF-8"));
-        parameters.put(CFG.CLASSPATH_LOADER_ENCODING, properties.getProperty("inputEncoding", "UTF-8"));
+        parameters.put(CFG.LOADER_ENCODING, properties.getProperty("inputEncoding", "UTF-8"));
 
         String outMode = properties.getProperty("outs", "0");
         if (outMode.equals("0")) {

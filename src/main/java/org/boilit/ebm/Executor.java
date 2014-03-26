@@ -1,11 +1,19 @@
 package org.boilit.ebm;
 
-import org.boilit.ebm.utils.Utilities;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+
+import org.boilit.ebm.utils.Utilities;
 import org.boilit.ebm.utils.WriterOutputStream;
 
 /**
@@ -34,7 +42,12 @@ public final class Executor implements Runnable {
     }
 
     private void execute() throws Exception {
-        final boolean bytesMode = properties.getProperty("outs", "0").equals("0");
+        boolean bytesMode = properties.getProperty("outs", "0").equals("0");
+        String outMode = properties.getProperty(engineName+".outs");
+        //允许引擎单独配置以覆盖默认配置
+        if(outMode!=null){
+        	bytesMode = outMode.equals("0");
+        }
         final IOutput output = createOutput(properties, bytesMode);
         final long time;
         //
@@ -48,6 +61,8 @@ public final class Executor implements Runnable {
         model.put("outputEncoding", outputEncoding);
         model.put("items", StockModel.dummyItems());
 
+      
+        
         if (bytesMode) {
             if (engine.isSupportByteStream()) {
                 time = doWork(engine, model, (OutputStream) output, loop, warm);
@@ -127,9 +142,10 @@ public final class Executor implements Runnable {
         final Properties properties = Utilities.getProperties(config);
         final String engineName = arguments.getProperty("-name", "NONE");
         final String engineClassName = arguments.getProperty("-engine");
+      
         final IEngine engine = (IEngine) Utilities.loadClass(engineClassName).newInstance();
         new File(Utilities.getDefaultClassLoader().getResource("").getFile(), engineName + ".txt").delete();
-        engine.init(properties);
+        engine.init( engineName,properties);
         try {
             final int thread = Integer.parseInt(properties.getProperty("thread", "1"));
             if (thread > 1) {

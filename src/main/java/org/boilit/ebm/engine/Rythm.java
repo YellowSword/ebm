@@ -1,13 +1,11 @@
 package org.boilit.ebm.engine;
 
-import org.boilit.ebm.AbstractEngine;
-import org.rythmengine.RythmEngine;
-
-import java.io.File;
 import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Map;
 import java.util.Properties;
+
+import org.boilit.ebm.AbstractEngine;
 
 /**
  * @author Boilit
@@ -18,8 +16,8 @@ public final class Rythm extends AbstractEngine {
     private RythmEngine engine;
 
     @Override
-    public final void init(Properties properties) throws Exception {
-        templateUrl = "templates/rythm.html";
+    public final void init(String engineName,Properties properties) throws Exception {
+    	      templateUrl = "templates/rythm.html";
 
         Properties p = new Properties();
         p.put("log.enabled", false);

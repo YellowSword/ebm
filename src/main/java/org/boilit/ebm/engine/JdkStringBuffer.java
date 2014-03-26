@@ -1,11 +1,11 @@
 package org.boilit.ebm.engine;
 
-import org.boilit.ebm.AbstractEngine;
-import org.boilit.ebm.StockModel;
-
 import java.io.Writer;
 import java.util.List;
 import java.util.Map;
+
+import org.boilit.ebm.AbstractEngine;
+import org.boilit.ebm.StockModel;
 
 /**
  * @author Boilit

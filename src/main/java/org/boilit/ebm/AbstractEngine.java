@@ -11,8 +11,8 @@ import java.util.Properties;
  */
 public abstract class AbstractEngine implements IEngine {
 
-    public void init(Properties properties) throws Exception {
-    }
+	   public  void init(String engineName,Properties properties) throws Exception {
+		    }
 
     public void work(Map<String, Object> model, Writer writer) throws Exception {
     }

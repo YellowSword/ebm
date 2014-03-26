@@ -1,15 +1,13 @@
 package org.boilit.ebm.engine;
 
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.VelocityEngine;
-import org.boilit.ebm.AbstractEngine;
-import org.boilit.ebm.IEngine;
-
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.Writer;
 import java.util.Map;
 import java.util.Properties;
+
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.boilit.ebm.AbstractEngine;
 
 /**
  * @author Boilit
@@ -20,8 +18,8 @@ public final class Velocity extends AbstractEngine {
     private VelocityEngine engine;
 
     @Override
-    public final void init(Properties properties) throws Exception {
-        templateUrl = "/vm.html";
+    public final void init(String engineName,Properties properties) throws Exception {
+    	      templateUrl = "/vm.html";
 
         engine = new VelocityEngine();
         //engine.setProperty("file.resource.loader.path", "templates");
