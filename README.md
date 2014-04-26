@@ -39,11 +39,7 @@ JVM参数: -server -Xms128m -XX:PermSize=32m
 
 ![report.png](report_jdk6.png)
 
-~~~~~
-JVM: windows oracle-JDK6u37 (32位)
-~~~~~
 
-![report.png](report_jdk6.png)
 
 参考资料
 ===
