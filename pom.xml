@@ -76,11 +76,6 @@
 	</build>
 	<dependencies>
 
-		<dependency>
-			<groupId>org.ow2.asm</groupId>
-			<artifactId>asm</artifactId>
-			<version>4.0</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.antlr</groupId>

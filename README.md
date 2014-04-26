@@ -29,15 +29,15 @@ mvn clean install
 ============
 
 ~~~~~
-JVM: windows oracle-JDK7u45 (32位)
+JVM: windows oracle-JDK7u45 (64位)
 JVM参数: -server -Xms128m -XX:PermSize=32m
-预热: 1000
-渲染次数: 200000
+预热: 3000
+渲染次数: 500000
 数据深度: 50
 输出编码: UTF-8
 ~~~~~
 
-![report.png](report_jdk7.png)
+![report.png](report_jdk6.png)
 
 ~~~~~
 JVM: windows oracle-JDK6u37 (32位)
@@ -45,58 +45,11 @@ JVM: windows oracle-JDK6u37 (32位)
 
 ![report.png](report_jdk6.png)
 
-
 参考资料
 ===
 <pre>
-交流QQ群：109365467
-
-引擎参考：
-  BSL
-    项目地址:https://github.com/boilit/bsl
-    官方地址:http://boilit.github.io/bsl
-  Webit-Script
-    项目地址:https://github.com/zqq90/webit-script
-    官方地址:http://zqq90.github.io/webit-script
-  JetBrick-Template
-    项目地址:https://github.com/subchen/jetbrick-template
-    官方地址:http://subchen.github.io/jetbrick-template
-  HTTL
-    项目地址:https://github.com/httl/httl
-    官方地址:http://httl.github.io
-  Beetl
-    官方地址:http://ibeetl.com/wordpress
-  Rythm
-    官方地址:http://rythmengine.org
-  Velocity
-    官方地址:http://velocity.apache.org
-  FreeMarker
-    官方地址:http://freemarker.org
-</pre>
-
-软件作者
-===
-<pre>
-软件作者：Boilit
-作者姓名：于景洋
-所在单位：胜利油田胜利软件有限责任公司
-</pre>
+交流QQ群：276400776
 
 
-Contributors：
-==============
 
-* zqq90: https://github.com/zqq90/ebm
-* subchen： https://github.com/subchen/ebm
-* Septembers: https://github.com/Septembers/ebm
-
-License(许可证)
-===
-<pre>
-Template Engine Benchmark Test is released under the MIT License. 
-See the bundled LICENSE file for details.
-
-Template Engine Benchmark Test依据MIT许可证发布。
-详细请看捆绑的LICENSE文件。
-</pre>
 
