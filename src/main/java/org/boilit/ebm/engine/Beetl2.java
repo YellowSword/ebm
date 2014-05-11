@@ -26,17 +26,26 @@ public final class Beetl2 extends AbstractEngine {
     	templateUrl = "/beetl.html";
     	String home = Beetl2.class.getResource("/templates").getPath();
 		Configuration cf = Configuration.defaultConfiguration();
+		
+		
 		boolean bytesMode = false ;
-	  String outMode = properties.getProperty(engineName+".outs");
+		String outMode  = properties.getProperty("outs");
+		if(outMode.equals("0")){
+			bytesMode = true;
+			cf.setDirectByteOutput(bytesMode);
+		}
+	   outMode = properties.getProperty(engineName+".outs");
         //允许引擎单独配置以覆盖默认配置
         if(outMode!=null){
         	bytesMode = outMode.equals("0");
+        	cf.setDirectByteOutput(bytesMode);
         }
-		
-		cf.setDirectByteOutput(bytesMode);
+        
+        
 		cf.setStatementStart("<!--:");
 		cf.setStatementEnd("-->");
 		FileResourceLoader rs = new FileResourceLoader(home, cf.getCharset());
+		System.out.println("byte mode ?:"+cf.isDirectByteOutput());
 		engine = new GroupTemplate(rs, cf);
     	
        
